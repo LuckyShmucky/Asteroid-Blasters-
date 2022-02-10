@@ -8,5 +8,24 @@ html{
     
 }
 
+ /* .asteroid:hover{
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+ }
 
+@keyframes slidein{
+    from{
+        margin-left: 50%;
+        width: 50%;
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}   */
 
+/* .asteroid{
+    tra
+} */
