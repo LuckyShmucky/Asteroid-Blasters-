@@ -1,4 +1,4 @@
-html{
+body{
     background-color: grey;
 }
 
@@ -35,4 +35,12 @@ html{
     left: 47vw;
     bottom: 50vh;
     text-align: center;
+}
+
+#winCard{
+    display: none;
+}
+
+#loseCard{
+    display: none;
 }
