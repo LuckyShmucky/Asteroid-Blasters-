@@ -40,6 +40,8 @@ const guideDiv = document.getElementById('guide')
 startButton.addEventListener('click', async function(){
      guideDiv.style.display = 'none'
      restartGame()
+     loseCard.style.display = 'none'
+     winCard.style.display = 'none'
     in2Seconds()
     in6Seconds()
 
@@ -60,6 +62,7 @@ const loseCard = document.getElementById('loseCard')
  function playerLost(){
     loseCard.style.display = 'block'
     guideDiv.style.display = 'block'
+    removeImages()
 }
  function playerWon(){
     winCard.style.display = 'block'
@@ -67,12 +70,12 @@ const loseCard = document.getElementById('loseCard')
 
  }
 
-//this function is creating the asteroid element and recieves its positioning
-//on the screen via two arguments: left, bottom
-function generateAsteroid(){
-
-    let asteroidImg = document.createElement('img');
-    asteroidImg.classList.add('asteroid');
+ //this function is creating the asteroid element and recieves its positioning
+ //on the screen via two arguments: left, bottom
+ function generateAsteroid(){
+     
+     let asteroidImg = document.createElement('img');
+     asteroidImg.classList.add('asteroid');
     asteroidImg.src = 'images/smallAsteroid.png';
     asteroidImg.style.position= 'fixed';
     asteroidImg.style.left = getX() + 'vw';
@@ -95,16 +98,11 @@ function generateAsteroid(){
         console.log(score)
       
         //here I am creating a way for the player to win the game and reset the score to 0 
+           
         if (score.points === 2){
-            playerWon()
-            //guideDiv.style.display = 'block'
-            
-        } else{
-        // await sleep(6000)
-        // playerLost() 
-    }
-    
-})
+           playerWon()
+        }
+    })
 
 }
 
@@ -142,4 +140,10 @@ function restartGame(){
     
 }
 
-
+function removeImages(){
+let images = document.getElementsByTagName('img')
+let l = images.length;
+for (var i = 0; i < l; i++){
+    images[0].parentNode.removeChild(images[0])
+}
+}
