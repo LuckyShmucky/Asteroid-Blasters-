@@ -1,5 +1,15 @@
+
 body{
-    background-color: grey;
+    background-image: url(../images/purplePixelBackground.jpeg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    background-size: cover;
+    background-color: #cccccc;
 }
 
 #root{
@@ -10,7 +20,7 @@ body{
 
  /* .asteroid:hover{
     animation-duration: 3s;
-    animation-name: slidein;
+    animation-name: slidFein;
     animation-iteration-count: infinite;
     animation-direction: alternate;
  }
@@ -32,15 +42,68 @@ body{
 
 #guide{
     position: fixed;
-    left: 47vw;
+    left: 40vw;
     bottom: 50vh;
+    /* outline: red 5px solid; */
     text-align: center;
+    border-radius: 25px;
 }
 
 #winCard{
     display: none;
+    /* outline: red 2px solid; */
+    background-color: white;
+    color: white;
+    background-color: #3DBEA8;
+    max-width: 450px;
+    position: fixed;
+    left: 40vw;
+    bottom: 35vh;
 }
 
 #loseCard{
     display: none;
+    outline: red 2px solid;
+}
+
+h1 , h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #DFADFF;
+    padding: 15px 25px;
+    max-width: 450px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: large;
+    max-width: 450px;
+    margin: 0px;
+    background-color: #DFADFF;
+    text-align: center;
+    border-radius: 20px;
+    padding: 15px 0px;
+}
+
+#winner{
+    background-color: #3DBEA8 !important;
+}
+
+#start{
+    margin: 15px 0px !important;
+    
+
+}
+
+#start:hover{
+    transition: 0.5s;
+    background-color: #3DBEA8;
+}
+
+h2{
+    background-color: #3DBEA8 !important;
+    border-radius: 20px !important;
 }

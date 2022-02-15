@@ -1,12 +1,14 @@
+//document.body.style.backgroundImage = "url('../images/AdobeBackground.jpeg')"
+
 //creating random numbers for X and Y coordinates
  function getX(){
-    return Math.floor(Math.random() * 85) + 10;
-    //console.log(x) 
+    return Math.floor(Math.random() * 50) + 20;
+    
     }
 
  function getY(){
-    return Math.floor(Math.random() * 85) + 10;
-    // console.log(y) 
+    return Math.floor(Math.random() * 50) + 20;
+     
     }
     
     //sleep function
@@ -16,24 +18,13 @@
         })
     }
     
-    // function gameTime(time){
-    //     return new Promise (resolve =>{
-    //         setTimeout(resolve, time)
-    //     })
-    // }
+   
 
     //creates a score to allow player to win or lose the game 
 let score = {
     points: 0
 }
 
-// let asteroid ={
-//         create: document.createElement('img'),
-//         class: 'asteroid',
-//         source: 'images/smallAsteroid.png',
-
-        
-// }
     
 const startButton = document.getElementById('start')
 const guideDiv = document.getElementById('guide')
@@ -49,8 +40,7 @@ startButton.addEventListener('click', async function(){
     await sleep(6000)
     if (score.points < 2){
         playerLost()
-        //guideDiv.style.display = 'block'
-        
+               
     }
    
 })
@@ -106,14 +96,6 @@ const loseCard = document.getElementById('loseCard')
 
 }
 
- 
-// async function timeLimit(){
-//     await sleep(1000)
-//     loseCard.style.display = 'block'
-// }
-
-
-
 //a helper function to generate asteroids in random locations
 async function in2Seconds(){
     await sleep(2000)
@@ -132,9 +114,7 @@ async function in6Seconds(){
     
 }
 
-
-
-//resets score for now
+//resets score 
 function restartGame(){
     score.points = 0
     
