@@ -63,7 +63,10 @@ body{
 
 #loseCard{
     display: none;
-    outline: red 2px solid;
+    
+    position: fixed;
+    left: 45vw;
+    bottom: 35vh;
 }
 
 h1 , h2{
@@ -107,3 +110,38 @@ h2{
     background-color: #3DBEA8 !important;
     border-radius: 20px !important;
 }
+
+
+.asteroid{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+
+
+
+#leftBar{
+    height: 1000vh;
+    width: 5vw;
+    background-color: #FFFADE;
+    position: fixed;
+    bottom: 0.2vh;
+}
+
+#bottomBar{
+    height: 20vh;
+    width: 100vw;
+    background-color: #FFFADE;
+    position: fixed;
+    top: 92vh;
+}
+
+#rightBar{
+    height: 1000vh;
+    width: 5vw;
+    background-color: #FFFADE;
+    position: fixed;
+    bottom: 0.2vh;
+    left: 95vw;
+}
+

@@ -37,8 +37,9 @@ startButton.addEventListener('click', async function(){
     in6Seconds()
 
     //the logic to let the player lose has to invoked again after the time has gone by
-    await sleep(6000)
-    if (score.points < 2){
+    await sleep(22000)
+    if (score.points < 10){
+        restartGame()
         playerLost()
                
     }
@@ -53,6 +54,7 @@ const loseCard = document.getElementById('loseCard')
     loseCard.style.display = 'block'
     guideDiv.style.display = 'block'
     removeImages()
+    //removeImages()
 }
  function playerWon(){
     winCard.style.display = 'block'
@@ -66,7 +68,7 @@ const loseCard = document.getElementById('loseCard')
      
      let asteroidImg = document.createElement('img');
      asteroidImg.classList.add('asteroid');
-    asteroidImg.src = 'images/smallAsteroid.png';
+    asteroidImg.src = 'images/purpleAsteroid.png';
     asteroidImg.style.position= 'fixed';
     asteroidImg.style.left = getX() + 'vw';
     asteroidImg.style.bottom = getY() + 'vh'
@@ -82,6 +84,7 @@ const loseCard = document.getElementById('loseCard')
     asteroidImg.addEventListener('click', async function(){
         // let explosion = new Audio('sounds/fastExplosion.wav')
         // explosion.play()
+        playSound()
         asteroidImg.remove()
         //asteroidImg.style.display = 'none'
         score.points++
@@ -89,7 +92,7 @@ const loseCard = document.getElementById('loseCard')
       
         //here I am creating a way for the player to win the game and reset the score to 0 
            
-        if (score.points === 2){
+        if (score.points === 10){
            playerWon()
         }
     })
@@ -100,7 +103,7 @@ const loseCard = document.getElementById('loseCard')
 async function in2Seconds(){
     await sleep(2000)
     //for loop to invoke function multiple times
-    for (var i = 0; i < 1; i++){
+    for (var i = 0; i < 5; i++){
         generateAsteroid(getX(), getY())
     }
     
@@ -108,7 +111,7 @@ async function in2Seconds(){
 
 async function in6Seconds(){
     await sleep(4000)
-    for (var i = 0; i < 1; i++){
+    for (var i = 0; i < 5; i++){
         generateAsteroid(getX(), getY())
     }
     
@@ -117,9 +120,10 @@ async function in6Seconds(){
 //resets score 
 function restartGame(){
     score.points = 0
-    
+    removeImages()
 }
 
+//remove images when needed
 function removeImages(){
 let images = document.getElementsByTagName('img')
 let l = images.length;
@@ -127,3 +131,7 @@ for (var i = 0; i < l; i++){
     images[0].parentNode.removeChild(images[0])
 }
 }
+
+
+//function to play sound everytime we click on meteor
+let playSound = () => new Audio('sounds/fastExplosion.wav').play()
