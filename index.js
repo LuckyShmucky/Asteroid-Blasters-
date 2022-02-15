@@ -1,5 +1,3 @@
-//document.body.style.backgroundImage = "url('../images/AdobeBackground.jpeg')"
-
 //creating random numbers for X and Y coordinates
  function getX(){
     return Math.floor(Math.random() * 50) + 20;
@@ -17,15 +15,12 @@
             setTimeout(resolve, time)
         })
     }
-    
-   
 
     //creates a score to allow player to win or lose the game 
 let score = {
     points: 0
 }
 
-    
 const startButton = document.getElementById('start')
 const guideDiv = document.getElementById('guide')
 startButton.addEventListener('click', async function(){
@@ -54,7 +49,6 @@ const loseCard = document.getElementById('loseCard')
     loseCard.style.display = 'block'
     guideDiv.style.display = 'block'
     removeImages()
-    //removeImages()
 }
  function playerWon(){
     winCard.style.display = 'block'
@@ -73,25 +67,20 @@ const loseCard = document.getElementById('loseCard')
     asteroidImg.style.left = getX() + 'vw';
     asteroidImg.style.bottom = getY() + 'vh'
    
-   asteroidImg.style.position= 'fixed';
-   asteroidImg.style.left = getX() + 'vw';
-   asteroidImg.style.bottom = getY() + 'vh'
-    
-
     document.getElementById('root').appendChild(asteroidImg)
     
     //event listener for asteroids
     asteroidImg.addEventListener('click', async function(){
-        // let explosion = new Audio('sounds/fastExplosion.wav')
-        // explosion.play()
-        playSound()
+     playSound()
         asteroidImg.remove()
-        //asteroidImg.style.display = 'none'
+     
         score.points++
         console.log(score)
       
         //here I am creating a way for the player to win the game and reset the score to 0 
-           
+        //I want this to be in the event listener for the click function so 
+        //as soon as the player clicks the last asteroid needed to win
+        //they will immediately win the game   
         if (score.points === 10){
            playerWon()
         }
@@ -109,8 +98,10 @@ async function in2Seconds(){
     
 }
 
+
+//same as in 2 seconds by waits for 6 seconds
 async function in6Seconds(){
-    await sleep(4000)
+    await sleep(6000)
     for (var i = 0; i < 5; i++){
         generateAsteroid(getX(), getY())
     }
@@ -127,11 +118,15 @@ function restartGame(){
 function removeImages(){
 let images = document.getElementsByTagName('img')
 let l = images.length;
+//because there are multiple images in the DOM, we have to run this code in a 
+//for loop to remove all elements (or iterations) from the array
 for (var i = 0; i < l; i++){
     images[0].parentNode.removeChild(images[0])
 }
 }
 
 
-//function to play sound everytime we click on meteor
-let playSound = () => new Audio('sounds/fastExplosion.wav').play()
+//helper function to play sound everytime we click on meteor
+function playSound(){
+    new Audio('sounds/fastExplosion.wav').play()
+}
