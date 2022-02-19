@@ -24,6 +24,7 @@ let score = {
 const startButton = document.getElementById('start')
 const guideDiv = document.getElementById('guide')
 startButton.addEventListener('click', async function(){
+    playStart()
      guideDiv.style.display = 'none'
      restartGame()
      loseCard.style.display = 'none'
@@ -35,6 +36,7 @@ startButton.addEventListener('click', async function(){
     await sleep(22000)
     if (score.points < 10){
         restartGame()
+        
         playerLost()
                
     }
@@ -48,12 +50,13 @@ const loseCard = document.getElementById('loseCard')
  function playerLost(){
     loseCard.style.display = 'block'
     guideDiv.style.display = 'block'
+    playLoserSound()
     removeImages()
 }
  function playerWon(){
     winCard.style.display = 'block'
     guideDiv.style.display = 'block'
-
+    playVictory()
  }
 
  //this function is creating the asteroid element and recieves its positioning
@@ -82,6 +85,7 @@ const loseCard = document.getElementById('loseCard')
         //as soon as the player clicks the last asteroid needed to win
         //they will immediately win the game   
         if (score.points === 10){
+           await sleep(500)
            playerWon()
         }
     })
@@ -129,4 +133,16 @@ for (var i = 0; i < l; i++){
 //helper function to play sound everytime we click on meteor
 function playSound(){
     new Audio('sounds/fastExplosion.wav').play()
+}
+ 
+function playStart(){
+    new Audio('sounds/SpaceQuick.mp3').play()
+}
+
+function playLoserSound(){
+    new Audio('sounds/playerLost.mp3').play()
+}
+
+function playVictory(){
+    new Audio('sounds/winSound.wav').play()
 }
