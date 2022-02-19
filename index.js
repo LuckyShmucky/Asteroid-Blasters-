@@ -31,6 +31,8 @@ startButton.addEventListener('click', async function(){
      winCard.style.display = 'none'
     in2Seconds()
     in6Seconds()
+    in12Seconds()
+    in16Seconds()
     result()
 
     //the logic to let the player lose has to invoked again after the time has gone by
@@ -84,7 +86,7 @@ const loseCard = document.getElementById('loseCard')
 
 async function result(){
     await sleep(22000)
-    if(score.points === 10){
+    if(score.points === 21){
         playerWon()
     } else {
         playerLost()
@@ -107,6 +109,22 @@ async function in2Seconds(){
 async function in6Seconds(){
     await sleep(6000)
     for (var i = 0; i < 5; i++){
+        generateAsteroid(getX(), getY())
+    }
+    
+}
+
+async function in12Seconds(){
+    await sleep(12000)
+    for (var i = 0; i < 7; i++){
+        generateAsteroid(getX(), getY())
+    }
+    
+}
+
+async function in16Seconds(){
+    await sleep(16000)
+    for (var i = 0; i < 4; i++){
         generateAsteroid(getX(), getY())
     }
     
