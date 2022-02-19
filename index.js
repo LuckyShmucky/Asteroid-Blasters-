@@ -25,21 +25,22 @@ const startButton = document.getElementById('start')
 const guideDiv = document.getElementById('guide')
 startButton.addEventListener('click', async function(){
     playStart()
+    restartGame()
      guideDiv.style.display = 'none'
-     restartGame()
      loseCard.style.display = 'none'
      winCard.style.display = 'none'
     in2Seconds()
     in6Seconds()
+    result()
 
     //the logic to let the player lose has to invoked again after the time has gone by
-    await sleep(22000)
-    if (score.points < 10){
-        restartGame()
+    // await sleep(22000)
+    // if (score.points < 10){
+    //     restartGame()
         
-        playerLost()
+    //     playerLost()
                
-    }
+    // }
    
 })
 
@@ -69,28 +70,27 @@ const loseCard = document.getElementById('loseCard')
     asteroidImg.style.position= 'fixed';
     asteroidImg.style.left = getX() + 'vw';
     asteroidImg.style.bottom = getY() + 'vh'
-   
-    document.getElementById('root').appendChild(asteroidImg)
+   document.getElementById('root').appendChild(asteroidImg)
     
     //event listener for asteroids
     asteroidImg.addEventListener('click', async function(){
      playSound()
         asteroidImg.remove()
-     
         score.points++
-        console.log(score)
-      
-        //here I am creating a way for the player to win the game and reset the score to 0 
-        //I want this to be in the event listener for the click function so 
-        //as soon as the player clicks the last asteroid needed to win
-        //they will immediately win the game   
-        if (score.points === 10){
-           await sleep(500)
-           playerWon()
-        }
+        //console.log(score)
     })
 
 }
+
+async function result(){
+    await sleep(22000)
+    if(score.points === 10){
+        playerWon()
+    } else {
+        playerLost()
+    }
+}
+
 
 //a helper function to generate asteroids in random locations
 async function in2Seconds(){

@@ -58,16 +58,17 @@ body{
     max-width: 450px;
     position: fixed;
     left: 40vw;
-    bottom: 35vh;
+    bottom: 18.7rem;
     border-radius: 25px;
+    height: 5.7rem;
 }
 
 #loseCard{
     display: none;
-    
     position: fixed;
-    left: 45vw;
-    bottom: 35vh;
+    left: 40vw;
+    bottom: 26vh;
+    width: 28.2rem;
 }
 
 h1 , h2{
@@ -84,8 +85,19 @@ h1 , h2{
  h1{
      position: fixed;
      width: 25rem;
-     top: 20rem;
+     top: 14.4rem;
+     justify-content: center;
+     text-align: center;
+     
  }
+
+
+#instructions{
+    position: fixed;
+    top: 26.4rem;
+    font-size: 1.25em;
+}
+
 
 
 
@@ -103,12 +115,15 @@ p{
 
 #winner{
     background-color: #3DBEA8 !important;
-    
+   
 }
 
 #start{
-    margin: 15px 0px !important;
-    
+  position: fixed;
+  top: 42.3rem;
+  width: 100rem;  
+  height: 6rem;
+  font-size: 5em;
 
 }
 
