@@ -1,11 +1,11 @@
 //creating random numbers for X and Y coordinates
  function getX(){
-    return Math.floor(Math.random() * 50) + 20;
+    return Math.floor(Math.random() * 65) + 10;
     
     }
 
  function getY(){
-    return Math.floor(Math.random() * 50) + 20;
+    return Math.floor(Math.random() * 60) +  15;
      
     }
     
@@ -16,7 +16,7 @@
         })
     }
 
-    //creates a score to allow player to win or lose the game 
+//creates a score to allow player to win or lose the game 
 let score = {
     points: 0
 }
@@ -66,13 +66,13 @@ const loseCard = document.getElementById('loseCard')
  //on the screen via two arguments: left, bottom
  function generateAsteroid(){
      
-     let asteroidImg = document.createElement('img');
-     asteroidImg.classList.add('asteroid');
+    let asteroidImg = document.createElement('img');
+    asteroidImg.classList.add('asteroid');
     asteroidImg.src = 'images/purpleAsteroid.png';
     asteroidImg.style.position= 'fixed';
     asteroidImg.style.left = getX() + 'vw';
     asteroidImg.style.bottom = getY() + 'vh'
-   document.getElementById('root').appendChild(asteroidImg)
+    document.getElementById('root').appendChild(asteroidImg)
     
     //event listener for asteroids
     asteroidImg.addEventListener('click', async function(){
