@@ -1,6 +1,6 @@
 # Asteroid-Blasters-
-A lot of the inspiration for this game comes from Galactica. 
-Growing up I played Galactica on a emulator with my Dad.
+A lot of the inspiration for this game comes from Galaga. 
+Growing up I played Galaga on a emulator with my Dad.
 
 I felt that using an actual ship and having asteroids fall from the top of the screen and move towards the ship at the bottom would be too complicated for my current skill level. Instead I decided to use event listeners to wait for the player to click the asteroids which adds one point to the current score. I know we had a past assignment that had a bonus where we could try to incorporate hit detection, however, I found that bonus to be one of the most difficult.
 
