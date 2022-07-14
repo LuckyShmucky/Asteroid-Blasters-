@@ -1,0 +1,32 @@
+@import 'color';
+@import 'spacing.scss';
+@mixin create-border($height, $width, $left : 0) {
+    height: $height;
+    width: $width;
+    position: fixed;
+    background-color: $border-color;
+    left: $left;
+    @if( $height == 1000vh) {
+        bottom: $fixed-top-spacing;
+        @warn "side bars must have the preset bottom"
+    }  @else {
+        top: $bottom-bar-spacing;
+    }
+
+}
+
+// #leftBar {
+//     @include create-border(1000vh, 5vw);
+//     bottom: 0.2vh;
+// }
+
+// #bottomBar {
+//     @include create-border(20vh, 100vw );
+//     top: 92vh;
+// }
+
+// #rightBar {
+//     @include create-border(1000vh, 5vw);
+//     left: 95vw;
+//     bottom: $fixed-top-spacing;
+// }

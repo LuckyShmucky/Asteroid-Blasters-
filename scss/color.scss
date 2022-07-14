@@ -1,0 +1,12 @@
+$primary-color: #3dbea8;
+$secondary-color: #dfadff;
+$white-font: white;
+$background-color: #cccccc;
+$green: $primary-color;
+$pink: $secondary-color;
+$border-color: #fffade;
+
+@function invert($color, $amount: 100%){
+    $inverse: change-color($color, $hue: hue($color) + 180 );
+    @return mix($inverse, $color, $amount)
+}

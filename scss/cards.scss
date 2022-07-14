@@ -1,0 +1,13 @@
+
+@mixin create-card($color) {
+    background-color: $color;
+    padding: .01rem 1rem .01rem 1rem;
+    max-width: 450px;
+    position:fixed;
+    border-radius: 25px;
+    @content
+}
+
+@mixin win-lose(){
+    display: none;
+}

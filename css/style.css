@@ -1,0 +1,97 @@
+body {
+  background-image: url(../images/purplePixelBackground.jpeg);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 95vh;
+  background-position: center center;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+  background-size: cover;
+  background-color: #cccccc;
+}
+body #winCard {
+  background-color: #3dbea8;
+  padding: 0.01rem 1rem 0.01rem 1rem;
+  max-width: 450px;
+  position: fixed;
+  border-radius: 25px;
+  left: 37vw;
+  bottom: 18.7rem;
+  padding-bottom: 1rem;
+  display: none;
+}
+body #loseCard {
+  background-color: #3dbea8;
+  padding: 0.01rem 1rem 0.01rem 1rem;
+  max-width: 450px;
+  position: fixed;
+  border-radius: 25px;
+  display: none;
+  left: 45.5rem;
+  bottom: 18.7rem;
+}
+body #guide {
+  background-color: #dfadff;
+  padding: 0.01rem 1rem 0.01rem 1rem;
+  max-width: 450px;
+  position: fixed;
+  border-radius: 25px;
+  left: 37vw;
+  top: 15vh;
+}
+body #startBttn {
+  background-color: #3dbea8;
+  padding: 0.01rem 1rem 0.01rem 1rem;
+  max-width: 450px;
+  position: fixed;
+  border-radius: 25px;
+  left: 48.5vw;
+  top: 70vh;
+}
+body #startBttn:hover {
+  transition: 0.5s;
+  background-color: #be3d53;
+}
+body #startBttn:hover p {
+  color: black;
+}
+body .asteroid {
+  max-width: 200px;
+  max-height: 200px;
+}
+body .asteroid:hover {
+  transition: 0.75s;
+  max-width: 100px;
+  max-height: 100px;
+}
+body p, body h1, body h2, body h3 {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body #leftBar {
+  height: 1000vh;
+  width: 5vw;
+  position: fixed;
+  background-color: #fffade;
+  left: 0;
+  bottom: 0.2vh;
+}
+body #bottomBar {
+  height: 20vh;
+  width: 100vw;
+  position: fixed;
+  background-color: #fffade;
+  left: 0;
+  top: 92vh;
+}
+body #rightBar {
+  height: 1000vh;
+  width: 5vw;
+  position: fixed;
+  background-color: #fffade;
+  left: 95vw;
+  bottom: 0.2vh;
+}
+
+/*# sourceMappingURL=style.css.map */

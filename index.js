@@ -29,6 +29,8 @@ startButton.addEventListener('click', async function(){
      guideDiv.style.display = 'none'
      loseCard.style.display = 'none'
      winCard.style.display = 'none'
+     startButton.style.display = 'none'
+     
     in2Seconds()
     in6Seconds()
     in12Seconds()
@@ -53,12 +55,14 @@ const loseCard = document.getElementById('loseCard')
  function playerLost(){
     loseCard.style.display = 'block'
     guideDiv.style.display = 'block'
+    startButton.style.display = 'block'
     playLoserSound()
     removeImages()
 }
  function playerWon(){
     winCard.style.display = 'block'
     guideDiv.style.display = 'block'
+    startButton.style.display = 'block'
     playVictory()
  }
 

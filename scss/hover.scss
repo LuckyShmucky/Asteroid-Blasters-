@@ -1,0 +1,7 @@
+@function text-color-picker($color) {
+    @if($color == $green) {
+        @return white
+    } @else {
+        @return black
+    }
+  }

@@ -1,0 +1,90 @@
+@import 'color.scss';
+@import 'cards.scss';
+@import 'font.scss';
+@import 'spacing.scss';
+@import 'border.scss';
+@import 'hover.scss';
+
+body {
+    background-image: url(../images/purplePixelBackground.jpeg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 95vh;
+    background-position: center center;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    background-size: cover;
+    background-color: $background-color;
+
+
+#winCard {
+    @include create-card($green);
+    left: $centered-450;
+    bottom: 18.7rem;
+    padding-bottom: 1rem;
+
+    @include win-lose();
+}
+
+#loseCard {
+    @include create-card($green);
+    @include win-lose();
+    left: 45.5rem;
+    bottom: 18.7rem;
+    
+}
+
+#guide {
+    @include create-card($pink);
+    left: $centered-450;
+    top: 15vh;
+}
+
+#startBttn {
+    @include create-card($green); 
+    left: $centered-sm;
+    top: 70vh;
+    &:hover{
+    transition: 0.5s;
+    background-color: invert($green);
+    p{
+        color: text-color-picker(background-color)
+    }
+    }
+
+}
+
+.asteroid{
+    max-width: 200px;
+    max-height: 200px;
+    &:hover{
+    transition: 0.75s;
+    max-width: 100px;
+    max-height: 100px;
+    }
+}
+
+p, h1, h2, h3 {
+    color: $white-font;
+    font-family: $allowed-font;
+}
+
+#leftBar {
+    @include create-border(1000vh, 5vw);
+
+    
+}
+
+#bottomBar {
+    @include create-border(20vh, 100vw );
+    
+}
+
+#rightBar {
+    @include create-border(1000vh, 5vw, 95vw);
+    // left: 95vw;
+    
+}
+
+}
